@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using NW.CursoMvc.Application.Interfaces;
 using NW.CursoMvc.Application.ViewModels;
 using NW.CursoMvc.UI.Site.Models;
 
@@ -13,12 +14,17 @@ namespace NW.CursoMvc.UI.Site.Controllers
 {
     public class FornecedoresController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly IFornecedorAppService _fornecedorAppService;
+
+        public FornecedoresController(IFornecedorAppService fornecedorAppService)
+        {
+            _fornecedorAppService = fornecedorAppService;
+        }
 
         // GET: Fornecedores
         public ActionResult Index()
         {
-            return View(db.FornecedorViewModels.ToList());
+            return View(_fornecedorAppService.ObterTodos());
         }
 
         // GET: Fornecedores/Details/5
@@ -28,7 +34,9 @@ namespace NW.CursoMvc.UI.Site.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FornecedorViewModel fornecedorViewModel = db.FornecedorViewModels.Find(id);
+
+            var fornecedorViewModel = _fornecedorAppService.ObterPorId(id.Value);
+
             if (fornecedorViewModel == null)
             {
                 return HttpNotFound();
@@ -47,18 +55,17 @@ namespace NW.CursoMvc.UI.Site.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FornecedorId,nome,cpf,email,dataNascimento,dataCadastro,ativo")] FornecedorViewModel fornecedorViewModel)
+        public ActionResult Create(FornecedorProdutoViewModel fornecedorProdutoViewModel)
         {
             if (ModelState.IsValid)
             {
-                fornecedorViewModel.FornecedorId = Guid.NewGuid();
-                db.FornecedorViewModels.Add(fornecedorViewModel);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                fornecedorProdutoViewModel = _fornecedorAppService.Adicionar(fornecedorProdutoViewModel);
+
             }
 
-            return View(fornecedorViewModel);
-        }
+            return View(fornecedorProdutoViewModel);
+
+        } 
 
         // GET: Fornecedores/Edit/5
         public ActionResult Edit(Guid? id)
@@ -67,7 +74,9 @@ namespace NW.CursoMvc.UI.Site.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FornecedorViewModel fornecedorViewModel = db.FornecedorViewModels.Find(id);
+
+            var fornecedorViewModel = _fornecedorAppService.ObterPorId(id.Value);
+
             if (fornecedorViewModel == null)
             {
                 return HttpNotFound();
@@ -80,12 +89,11 @@ namespace NW.CursoMvc.UI.Site.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "FornecedorId,nome,cpf,email,dataNascimento,dataCadastro,ativo")] FornecedorViewModel fornecedorViewModel)
+        public ActionResult Edit(FornecedorViewModel fornecedorViewModel)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(fornecedorViewModel).State = EntityState.Modified;
-                db.SaveChanges();
+                _fornecedorAppService.Atualizar(fornecedorViewModel);
                 return RedirectToAction("Index");
             }
             return View(fornecedorViewModel);
@@ -98,7 +106,8 @@ namespace NW.CursoMvc.UI.Site.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FornecedorViewModel fornecedorViewModel = db.FornecedorViewModels.Find(id);
+
+            var fornecedorViewModel = _fornecedorAppService.ObterPorId(id.Value);
             if (fornecedorViewModel == null)
             {
                 return HttpNotFound();
@@ -111,9 +120,7 @@ namespace NW.CursoMvc.UI.Site.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            FornecedorViewModel fornecedorViewModel = db.FornecedorViewModels.Find(id);
-            db.FornecedorViewModels.Remove(fornecedorViewModel);
-            db.SaveChanges();
+            _fornecedorAppService.Remover(id);
             return RedirectToAction("Index");
         }
 
@@ -121,7 +128,7 @@ namespace NW.CursoMvc.UI.Site.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _fornecedorAppService.Dispose();
             }
             base.Dispose(disposing);
         }

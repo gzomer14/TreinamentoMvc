@@ -12,6 +12,11 @@ namespace NW.CursoMvc.Application.AutoMapper
             CreateMap<ClienteEnderecoViewModel, Cliente>();
             CreateMap<EnderecoViewModel, Endereco>();
             CreateMap<ClienteEnderecoViewModel, Endereco>();
+
+            CreateMap<FornecedorViewModel, Fornecedor>();
+            CreateMap<FornecedorProdutoViewModel, Fornecedor>();
+            CreateMap<ProdutoViewModel, Produto>();
+            CreateMap<FornecedorProdutoViewModel, Produto>();
         }
     }
 }

@@ -5,3 +5,11 @@ C:\Users\gzomer\source\repos\CursoMvc\src\NW.CursoMvc.Domain\obj\Debug\NW.CursoM
 C:\Users\gzomer\source\repos\CursoMvc\src\NW.CursoMvc.Domain\obj\Debug\NW.CursoMvc.Domain.csproj.CopyComplete
 C:\Users\gzomer\source\repos\CursoMvc\src\NW.CursoMvc.Domain\obj\Debug\NW.CursoMvc.Domain.dll
 C:\Users\gzomer\source\repos\CursoMvc\src\NW.CursoMvc.Domain\obj\Debug\NW.CursoMvc.Domain.pdb
+D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Domain\bin\Debug\NW.CursoMvc.Domain.dll
+D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Domain\bin\Debug\NW.CursoMvc.Domain.pdb
+D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Domain\bin\Debug\DomainValidation.dll
+D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Domain\obj\Debug\NW.CursoMvc.Domain.csprojAssemblyReference.cache
+D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Domain\obj\Debug\NW.CursoMvc.Domain.csproj.CoreCompileInputs.cache
+D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Domain\obj\Debug\NW.CursoMvc.Domain.csproj.CopyComplete
+D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Domain\obj\Debug\NW.CursoMvc.Domain.dll
+D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Domain\obj\Debug\NW.CursoMvc.Domain.pdb

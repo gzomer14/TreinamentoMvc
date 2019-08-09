@@ -8,7 +8,7 @@ namespace NW.CursoMvc.Application.ViewModels
     {
         public ProdutoViewModel()
         {
-
+            ProdutoId = Guid.NewGuid();
         }
 
         [Key]
