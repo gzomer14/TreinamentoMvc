@@ -1,0 +1,7 @@
+C:\Users\gzomer\source\repos\CursoMvc\src\NW.CursoMvc.Domain\bin\Debug\NW.CursoMvc.Domain.dll
+C:\Users\gzomer\source\repos\CursoMvc\src\NW.CursoMvc.Domain\bin\Debug\NW.CursoMvc.Domain.pdb
+C:\Users\gzomer\source\repos\CursoMvc\src\NW.CursoMvc.Domain\bin\Debug\DomainValidation.dll
+C:\Users\gzomer\source\repos\CursoMvc\src\NW.CursoMvc.Domain\obj\Debug\NW.CursoMvc.Domain.csproj.CoreCompileInputs.cache
+C:\Users\gzomer\source\repos\CursoMvc\src\NW.CursoMvc.Domain\obj\Debug\NW.CursoMvc.Domain.csproj.CopyComplete
+C:\Users\gzomer\source\repos\CursoMvc\src\NW.CursoMvc.Domain\obj\Debug\NW.CursoMvc.Domain.dll
+C:\Users\gzomer\source\repos\CursoMvc\src\NW.CursoMvc.Domain\obj\Debug\NW.CursoMvc.Domain.pdb
