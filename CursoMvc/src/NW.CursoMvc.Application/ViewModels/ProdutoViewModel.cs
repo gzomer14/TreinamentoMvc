@@ -17,8 +17,8 @@ namespace NW.CursoMvc.Application.ViewModels
         [Required(ErrorMessage = "Preencha o campo Nome")]
         [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        [DisplayName("Nome")]
-        public string nome { get; set; }
+        [DisplayName("Nome do produto")]
+        public string nomeProd { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Descrição")]
         [DisplayName("Descrição")]

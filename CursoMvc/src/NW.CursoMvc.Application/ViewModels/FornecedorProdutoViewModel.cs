@@ -40,7 +40,7 @@ namespace NW.CursoMvc.Application.ViewModels
         public DateTime dataNascimento { get; set; }
 
         [ScaffoldColumn(false)]
-        public DateTime dataCadastro { get; set; }
+        public DateTime DataCadastro { get; set; }
 
         [ScaffoldColumn(false)]
         public bool ativo { get; set; }
@@ -53,7 +53,7 @@ namespace NW.CursoMvc.Application.ViewModels
         [Required(ErrorMessage = "Preencha o campo Nome")]
         [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        [DisplayName("Nome")]
+        [DisplayName("Nome do produto")]
         public string nomeProd { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Descrição")]

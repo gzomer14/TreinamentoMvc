@@ -231,7 +231,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
@@ -264,7 +263,7 @@
     <Content Include="Views\Shared\_ErrorSummary.cshtml" />
     <Content Include="Views\Fornecedores\Create.cshtml" />
     <Content Include="Views\Fornecedores\Delete.cshtml" />
-    <Content Include="Views\Fornecedores\Details.cshtml" />
+    <Content Include="Views\Fornecedores\Produtos.cshtml" />
     <Content Include="Views\Fornecedores\Edit.cshtml" />
     <Content Include="Views\Fornecedores\Index.cshtml" />
   </ItemGroup>

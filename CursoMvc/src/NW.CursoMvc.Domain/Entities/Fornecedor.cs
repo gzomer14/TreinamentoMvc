@@ -19,7 +19,7 @@ namespace NW.CursoMvc.Domain.Entities
         public string cpf { get; set; }
         public string email { get; set; }
         public DateTime dataNascimento { get; set; }
-        public DateTime dataCadastro { get; set; }
+        public DateTime DataCadastro { get; set; }
         public bool ativo { get; set; }
         public virtual ICollection<Produto> Produtos { get; set; }
 

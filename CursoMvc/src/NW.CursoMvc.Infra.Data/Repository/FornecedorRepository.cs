@@ -41,7 +41,7 @@ namespace NW.CursoMvc.Infra.Data.Repository
         public override IEnumerable<Fornecedor> ObterTodos()
         {
             var cn = Db.Database.Connection;
-            var sql = @"SELECT * FROM FORNECEDORES";
+            var sql = @"SELECT * FROM FORNECEDOR";
 
             return cn.Query<Fornecedor>(sql);
         }
@@ -49,8 +49,8 @@ namespace NW.CursoMvc.Infra.Data.Repository
         public override Fornecedor ObterPorId(Guid id)
         {
             var cn = Db.Database.Connection;
-            var sql = @"SELECT * FROM Fornecedores f " +
-                      "LEFT JOIN Produtos p " +
+            var sql = @"SELECT * FROM Fornecedor f " +
+                      "LEFT JOIN Produto p " +
                       "ON f.FornecedorId = p.FornecedorId " +
                       "WHERE f.FornecedorId = @sid";
 

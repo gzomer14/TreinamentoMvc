@@ -6,14 +6,16 @@ using NW.CursoMvc.Application.Interfaces;
 using NW.CursoMvc.Application.ViewModels;
 using NW.CursoMvc.Domain.Entities;
 using NW.CursoMvc.Domain.Interfaces.Services;
+using NW.CursoMvc.Infra.Data.UnitOfWork;
 
 namespace NW.CursoMvc.Application
 {
-    public class FornecedorAppService : IFornecedorAppService
+    public class FornecedorAppService : AppService, IFornecedorAppService
     {
         private readonly IFornecedorService _fornecedorService;
 
-        public FornecedorAppService(IFornecedorService fornecedorService)
+        public FornecedorAppService(IFornecedorService fornecedorService, IUnitOfWork uow)
+            :base(uow)
         {
             _fornecedorService = fornecedorService;
         }
@@ -25,7 +27,11 @@ namespace NW.CursoMvc.Application
 
             fornecedor.Produtos.Add(produto);
 
-            return Mapper.Map<FornecedorProdutoViewModel>(_fornecedorService.Adicionar(fornecedor));
+            var fornecedorReturn = _fornecedorService.Adicionar(fornecedor);
+
+            Commit();
+
+            return Mapper.Map<FornecedorProdutoViewModel>(fornecedorReturn);
         }
 
         public FornecedorViewModel Atualizar(FornecedorViewModel fornecedorViewModel)

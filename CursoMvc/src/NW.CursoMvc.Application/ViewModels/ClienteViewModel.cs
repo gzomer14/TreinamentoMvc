@@ -49,7 +49,7 @@ namespace NW.CursoMvc.Application.ViewModels
         [ScaffoldColumn(false)]
 
         public bool Ativo { get; set; }
-        
+
 
         public ICollection<EnderecoViewModel> Enderecos { get; set; }
 

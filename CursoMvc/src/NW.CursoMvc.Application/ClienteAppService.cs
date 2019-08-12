@@ -26,6 +26,8 @@ namespace NW.CursoMvc.Application
             var endereco = Mapper.Map<Endereco>(clienteEnderecoViewModel);
 
             cliente.Enderecos.Add(endereco);
+
+            cliente.Ativo = true;
             // Unit of Work
             var clienteReturn = _clienteService.Adicionar(cliente);
 
@@ -38,8 +40,14 @@ namespace NW.CursoMvc.Application
 
         public ClienteViewModel Atualizar(ClienteViewModel clienteViewModel)
         {
-            var cliente = Mapper.Map<Cliente>(clienteViewModel);
-            _clienteService.Atualizar(cliente);
+            var client = _clienteService.ObterPorId(clienteViewModel.ClienteId);
+            client.Ativo = true;
+            var cliente = Mapper.Map(clienteViewModel, client);
+            //_clienteService.Atualizar(cliente);
+
+            var clienteReturn = _clienteService.Atualizar(cliente);
+            Commit();
+
 
             return clienteViewModel;
         }

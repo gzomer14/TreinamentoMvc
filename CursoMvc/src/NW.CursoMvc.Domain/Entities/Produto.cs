@@ -11,7 +11,7 @@ namespace NW.CursoMvc.Domain.Entities
 
         public Guid ProdutoId { get; set; }
 
-        public string nome { get; set; }
+        public string nomeProd { get; set; }
         public string descricao { get; set; }
         public double valor { get; set; }
         public double peso { get; set; }

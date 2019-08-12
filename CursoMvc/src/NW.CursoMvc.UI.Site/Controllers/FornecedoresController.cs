@@ -28,7 +28,7 @@ namespace NW.CursoMvc.UI.Site.Controllers
         }
 
         // GET: Fornecedores/Details/5
-        public ActionResult Details(Guid? id)
+        public ActionResult Produtos(Guid? id)
         {
             if (id == null)
             {
@@ -57,13 +57,9 @@ namespace NW.CursoMvc.UI.Site.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(FornecedorProdutoViewModel fornecedorProdutoViewModel)
         {
-            if (ModelState.IsValid)
-            {
-                fornecedorProdutoViewModel = _fornecedorAppService.Adicionar(fornecedorProdutoViewModel);
+            fornecedorProdutoViewModel = _fornecedorAppService.Adicionar(fornecedorProdutoViewModel);
 
-            }
-
-            return View(fornecedorProdutoViewModel);
+            return RedirectToAction("Index");
 
         } 
 

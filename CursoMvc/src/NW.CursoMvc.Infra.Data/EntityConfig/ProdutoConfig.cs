@@ -9,7 +9,7 @@ namespace NW.CursoMvc.Infra.Data.EntityConfig
         {
             HasKey(p => p.ProdutoId);
 
-            Property(p => p.nome)
+            Property(p => p.nomeProd)
                 .IsRequired()
                 .HasColumnOrder(1)
                 .HasMaxLength(150);

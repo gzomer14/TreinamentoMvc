@@ -17,8 +17,8 @@ namespace NW.CursoMvc.Infra.Data.Context
 
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
-        public DbSet<Fornecedor> Fornecedores { get; set; }
-        public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Fornecedor> Fornecedor { get; set; }
+        public DbSet<Produto> Produto { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
