@@ -27,6 +27,8 @@ namespace NW.CursoMvc.Application
 
             fornecedor.Produtos.Add(produto);
 
+            fornecedor.ativo = true;
+
             var fornecedorReturn = _fornecedorService.Adicionar(fornecedor);
 
             Commit();
@@ -34,10 +36,22 @@ namespace NW.CursoMvc.Application
             return Mapper.Map<FornecedorProdutoViewModel>(fornecedorReturn);
         }
 
+        public FornecedorProdutoViewModel ObterProdutos(FornecedorProdutoViewModel fornecedorProdutoViewModel)
+        {
+            var nada = new FornecedorProdutoViewModel();
+
+            return nada;
+        }
+
         public FornecedorViewModel Atualizar(FornecedorViewModel fornecedorViewModel)
         {
-            var fornecedor = Mapper.Map<Fornecedor>(fornecedorViewModel);
-            _fornecedorService.Atualizar(fornecedor);
+            var forn = _fornecedorService.ObterPorId(fornecedorViewModel.FornecedorId);
+            forn.ativo = true;
+            var fornecedor = Mapper.Map(fornecedorViewModel, forn);
+            fornecedor.ativo = true;
+            var fornreturn = _fornecedorService.Atualizar(fornecedor);
+            Commit();
+
 
             return fornecedorViewModel;
         }
@@ -60,7 +74,9 @@ namespace NW.CursoMvc.Application
 
         public FornecedorViewModel ObterPorId(Guid id)
         {
-            return Mapper.Map<FornecedorViewModel>(_fornecedorService.ObterPorId(id));
+            var teste = _fornecedorService.ObterPorId(id);
+
+            return Mapper.Map<FornecedorViewModel>(teste);
         }
 
         public IEnumerable<FornecedorViewModel> ObterTodos()

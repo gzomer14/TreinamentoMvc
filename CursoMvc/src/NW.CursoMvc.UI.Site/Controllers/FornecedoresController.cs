@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using NW.CursoMvc.Application.Interfaces;
 using NW.CursoMvc.Application.ViewModels;
+using NW.CursoMvc.Domain.Entities;
+using NW.CursoMvc.Domain.Interfaces.Repository;
 using NW.CursoMvc.UI.Site.Models;
 
 namespace NW.CursoMvc.UI.Site.Controllers
@@ -36,12 +38,13 @@ namespace NW.CursoMvc.UI.Site.Controllers
             }
 
             var fornecedorViewModel = _fornecedorAppService.ObterPorId(id.Value);
+            var produtos = fornecedorViewModel.Produtos;
 
             if (fornecedorViewModel == null)
             {
                 return HttpNotFound();
             }
-            return View(fornecedorViewModel);
+            return View(produtos);
         }
 
         // GET: Fornecedores/Create
@@ -127,6 +130,11 @@ namespace NW.CursoMvc.UI.Site.Controllers
                 _fornecedorAppService.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult test(string button)
+        {
+            return View("Teste");
         }
     }
 }

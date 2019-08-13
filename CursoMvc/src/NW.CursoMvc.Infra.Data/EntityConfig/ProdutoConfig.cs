@@ -11,7 +11,6 @@ namespace NW.CursoMvc.Infra.Data.EntityConfig
 
             Property(p => p.nomeProd)
                 .IsRequired()
-                .HasColumnOrder(1)
                 .HasMaxLength(150);
 
             Property(p => p.descricao)

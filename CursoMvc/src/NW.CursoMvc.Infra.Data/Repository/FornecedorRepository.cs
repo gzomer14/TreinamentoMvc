@@ -61,6 +61,13 @@ namespace NW.CursoMvc.Infra.Data.Repository
                     return f;
                 }, new {sid = id}, splitOn: "FornecedorId, ProdutoId");
             return fornecedor.FirstOrDefault();
+
+            /*return DbSet.Include(a => a.Produtos)
+                .FirstOrDefault(a =>
+                    a.FornecedorId == id);
+                (Outro metodo para acessar os dados, utilizando o proprio entity framework. É um metodo mais demorado 
+                e pesado do que utilizando o Dapper, porem possui mais recursos).       
+             */
         }
     }
 }

@@ -44,7 +44,7 @@ namespace NW.CursoMvc.Application
             client.Ativo = true;
             var cliente = Mapper.Map(clienteViewModel, client);
             //_clienteService.Atualizar(cliente);
-
+            cliente.Ativo = true;
             var clienteReturn = _clienteService.Atualizar(cliente);
             Commit();
 

@@ -30,6 +30,6 @@ namespace NW.CursoMvc.UI.Site.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<NW.CursoMvc.Application.ViewModels.FornecedorViewModel> FornecedorViewModels { get; set; }
+        //public System.Data.Entity.DbSet<NW.CursoMvc.Application.ViewModels.FornecedorViewModel> FornecedorViewModels { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model NW.CursoMvc.Application.ViewModels.FornecedorProdutoViewModel
+﻿@model System.Collections.Generic.ICollection<NW.CursoMvc.Application.ViewModels.ProdutoViewModel>
 
 @{
     ViewBag.Title = "Produtos";
@@ -10,24 +10,40 @@
     <h4>Seus Produtos</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.nomeProd)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.descricao)
-        </dd>
+            @foreach (var produtos in Model)
+            {
+        <dd>Nome do produto: @Html.DisplayFor(model => produtos.nomeProd)</dd>
+            
+        <dd>Descrição do produto: @Html.DisplayFor(model => produtos.descricao)</dd>
+            
+        <dd>Peso do produto: @Html.DisplayFor(model => produtos.peso)kg</dd>
+            
+        <dd>Valor do produto: @Html.DisplayFor(model => produtos.valor) reais</dd>
+            
+             }
+            </dd>
+            @*<dd>
+                @Html.DisplayFor(model => model.ProdutoId)
+            </dd>
+            <dd>
+                @Html.DisplayFor(model => model.FornecedorId)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.peso)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.descricao)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.valor)
-        </dd>
-    </dl>
+            <dt>
+                @Html.DisplayFor(model => model.peso)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.valor)
+            </dd>*@
+        </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.FornecedorId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.FornecedorId }) |
+    @Html.ActionLink("Back to List", "Index")*@
 </p>

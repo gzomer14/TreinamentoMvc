@@ -266,6 +266,7 @@
     <Content Include="Views\Fornecedores\Produtos.cshtml" />
     <Content Include="Views\Fornecedores\Edit.cshtml" />
     <Content Include="Views\Fornecedores\Index.cshtml" />
+    <Content Include="Views\Fornecedores\Teste.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -287,6 +288,10 @@
     <ProjectReference Include="..\NW.CursoMvc.Application\NW.CursoMvc.Application.csproj">
       <Project>{1f3d1cb3-c978-4ae5-8a7f-bd20f4cf3dd4}</Project>
       <Name>NW.CursoMvc.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NW.CursoMvc.Domain\NW.CursoMvc.Domain.csproj">
+      <Project>{b1dac000-ed6b-481c-887d-a02ee4466867}</Project>
+      <Name>NW.CursoMvc.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\NW.CursoMvc.Infra.CrossCutting.IoC\NW.CursoMvc.Infra.CrossCutting.IoC.csproj">
       <Project>{1a7f9f50-1ce7-4dd3-9c29-a64064239061}</Project>

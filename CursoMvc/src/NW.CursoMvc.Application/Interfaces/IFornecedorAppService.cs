@@ -8,6 +8,8 @@ namespace NW.CursoMvc.Application.Interfaces
     {
         FornecedorProdutoViewModel Adicionar(FornecedorProdutoViewModel fornecedorProdutoViewModel);
 
+        FornecedorProdutoViewModel ObterProdutos(FornecedorProdutoViewModel fornecedorProdutoViewModel);
+
         FornecedorViewModel ObterPorId(Guid id);
 
         IEnumerable<FornecedorViewModel> ObterTodos();
