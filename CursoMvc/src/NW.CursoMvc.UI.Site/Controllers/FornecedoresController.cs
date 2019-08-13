@@ -58,11 +58,16 @@ namespace NW.CursoMvc.UI.Site.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(FornecedorProdutoViewModel fornecedorProdutoViewModel)
+        public ActionResult Create(FornecedorViewModel fornecedorViewModel)
         {
-            fornecedorProdutoViewModel = _fornecedorAppService.Adicionar(fornecedorProdutoViewModel);
+            if (ModelState.IsValid)
+            {
+                fornecedorViewModel = _fornecedorAppService.Adicionar(fornecedorViewModel);
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+
+            return View(fornecedorViewModel);
 
         } 
 

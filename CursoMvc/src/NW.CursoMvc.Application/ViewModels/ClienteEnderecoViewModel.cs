@@ -18,20 +18,20 @@ namespace NW.CursoMvc.Application.ViewModels
         public Guid ClienteId { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Nome")]
-        [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [MaxLength(150, ErrorMessage = "Máximo 150 caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo 2 caracteres")]
 
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo E-mail")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
+        [MaxLength(100, ErrorMessage = "Máximo 100 caracteres")]
         [EmailAddress(ErrorMessage = "Preencha um E-mail válido")]
         [DisplayName("E-mail")]
 
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo CPF")]
-        [MaxLength(11, ErrorMessage = "Máximo {0} caracteres")]
+        [MaxLength(11, ErrorMessage = "Máximo 11 caracteres")]
         [DisplayName("CPF")]
 
         public string CPF { get; set; }
@@ -60,43 +60,43 @@ namespace NW.CursoMvc.Application.ViewModels
         public Guid EnderecoId { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Logradouro")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [MaxLength(100, ErrorMessage = "Máximo 100 caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo 2 caracteres")]
 
         public string Logradouro { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Numero")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [MaxLength(100, ErrorMessage = "Máximo 100 caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo 2 caracteres")]
 
         public string Numero { get; set; }
 
-        [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [MaxLength(150, ErrorMessage = "Máximo 150 caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo 2 caracteres")]
 
         public string Complemento { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Bairro")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [MaxLength(100, ErrorMessage = "Máximo 100 caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo 2 caracteres")]
 
         public string Bairro { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo CEP")]
-        [MaxLength(8, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(8, ErrorMessage = "Mínimo {0} caracteres")]
+        [MaxLength(8, ErrorMessage = "Máximo 8 caracteres")]
+        [MinLength(8, ErrorMessage = "Mínimo 8 caracteres")]
 
         public string CEP { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Cidade")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [MaxLength(100, ErrorMessage = "Máximo 100 caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo 2 caracteres")]
 
         public string Cidade { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Estado")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [MaxLength(100, ErrorMessage = "Máximo 100 caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo 2 caracteres")]
 
         public string Estado { get; set; }
     }

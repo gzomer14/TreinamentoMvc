@@ -20,12 +20,9 @@ namespace NW.CursoMvc.Application
             _fornecedorService = fornecedorService;
         }
 
-        public FornecedorProdutoViewModel Adicionar(FornecedorProdutoViewModel fornecedorProdutoViewModel)
+        public FornecedorViewModel Adicionar(FornecedorViewModel fornecedorViewModel)
         {
-            var fornecedor = Mapper.Map<Fornecedor>(fornecedorProdutoViewModel);
-            var produto = Mapper.Map<Produto>(fornecedorProdutoViewModel);
-
-            fornecedor.Produtos.Add(produto);
+            var fornecedor = Mapper.Map<Fornecedor>(fornecedorViewModel);
 
             fornecedor.ativo = true;
 
@@ -33,7 +30,7 @@ namespace NW.CursoMvc.Application
 
             Commit();
 
-            return Mapper.Map<FornecedorProdutoViewModel>(fornecedorReturn);
+            return Mapper.Map<FornecedorViewModel>(fornecedorReturn);
         }
 
         public FornecedorProdutoViewModel ObterProdutos(FornecedorProdutoViewModel fornecedorProdutoViewModel)

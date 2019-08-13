@@ -18,18 +18,18 @@ namespace NW.CursoMvc.Application.ViewModels
         public Guid FornecedorId { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo nome")]
-        [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [MaxLength(150, ErrorMessage = "Máximo 150 caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo 2 caracteres")]
         [DisplayName("Nome")]
         public string nome { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo cpf")]
-        [MaxLength(11, ErrorMessage = "Máximo {0} caracteres")]
+        [MaxLength(11, ErrorMessage = "Máximo 11 caracteres")]
         [DisplayName("CPF")]
         public string cpf { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo email")]
-        [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
+        [MaxLength(150, ErrorMessage = "Máximo 150 caracteres")]
         [EmailAddress(ErrorMessage = "Preencha um E-mail válido")]
         [DisplayName("E-mail")]
         public string email { get; set; }
@@ -51,8 +51,8 @@ namespace NW.CursoMvc.Application.ViewModels
         public Guid ProdutoId { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Nome")]
-        [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
+        [MaxLength(150, ErrorMessage = "Máximo 150 caracteres")]
+        [MinLength(2, ErrorMessage = "Mínimo 2 caracteres")]
         [DisplayName("Nome do produto")]
         public string nomeProd { get; set; }
 

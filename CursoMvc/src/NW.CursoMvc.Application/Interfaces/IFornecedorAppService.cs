@@ -6,7 +6,7 @@ namespace NW.CursoMvc.Application.Interfaces
 {
     public interface IFornecedorAppService : IDisposable
     {
-        FornecedorProdutoViewModel Adicionar(FornecedorProdutoViewModel fornecedorProdutoViewModel);
+        FornecedorViewModel Adicionar(FornecedorViewModel fornecedorViewModel);
 
         FornecedorProdutoViewModel ObterProdutos(FornecedorProdutoViewModel fornecedorProdutoViewModel);
 
