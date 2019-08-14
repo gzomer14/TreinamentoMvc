@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using NW.CursoMvc.Application.Interfaces;
+using NW.CursoMvc.Application.ViewModels;
 using NW.CursoMvc.Domain.Entities;
 using NW.CursoMvc.UI.Site.Models;
 
@@ -27,6 +28,26 @@ namespace NW.CursoMvc.UI.Site.Controllers
             return View(_produtoAppService.ObterPorFornecedor(id));
         }
 
+        // GET: Produtos/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Produtos/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(ProdutoViewModel produtoViewModel, Guid id)
+        {
+            if (ModelState.IsValid)
+            {
+                produtoViewModel = _produtoAppService.AdicionarProdForn(produtoViewModel, id);
+
+                return RedirectToAction("Index","Fornecedores");
+            }
+
+            return View(produtoViewModel);
+        }
         //// GET: Produtos/Details/5
         //public ActionResult Details(Guid? id)
         //{
@@ -42,31 +63,6 @@ namespace NW.CursoMvc.UI.Site.Controllers
         //    return View(produto);
         //}
 
-        //// GET: Produtos/Create
-        //public ActionResult Create()
-        //{
-        //    ViewBag.FornecedorId = new SelectList(db.Fornecedors, "FornecedorId", "nome");
-        //    return View();
-        //}
-
-        //// POST: Produtos/Create
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create([Bind(Include = "ProdutoId,nomeProd,descricao,valor,peso,FornecedorId")] Produto produto)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        produto.ProdutoId = Guid.NewGuid();
-        //        db.Produtos.Add(produto);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    ViewBag.FornecedorId = new SelectList(db.Fornecedors, "FornecedorId", "nome", produto.FornecedorId);
-        //    return View(produto);
-        //}
 
         //// GET: Produtos/Edit/5
         //public ActionResult Edit(Guid? id)

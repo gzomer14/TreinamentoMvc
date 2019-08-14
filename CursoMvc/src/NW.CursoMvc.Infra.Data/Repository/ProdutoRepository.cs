@@ -28,5 +28,25 @@ namespace NW.CursoMvc.Infra.Data.Repository
             return produto;
         }
 
+        public Produto AdicionarProdForn(Produto produto, Guid id)
+        {
+            var cn = Db.Database.Connection;
+            var sql = @"INSERT INTO Produto values (@ProdutoId,@nomeProd,@descricao,@valor,@peso,@FornecedorId)";
+            var prod = produto;
+
+            var prodreturn = cn.Query<Produto>(sql,
+                new
+                {
+                    ProdutoId = prod.ProdutoId,
+                    nomeProd = prod.nomeProd,
+                    descricao = prod.descricao,
+                    valor = prod.valor,
+                    peso = prod.peso,
+                    FornecedorId = id
+                });
+
+            return null;
+        }
+
     }
 }

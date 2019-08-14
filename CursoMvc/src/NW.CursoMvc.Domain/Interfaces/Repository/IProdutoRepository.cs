@@ -8,6 +8,6 @@ namespace NW.CursoMvc.Domain.Interfaces.Repository
     {
         IEnumerable<Produto> ObterPorFornecedor(Guid id);
 
-
+        Produto AdicionarProdForn(Produto produto, Guid id);
     }
 }

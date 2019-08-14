@@ -32,6 +32,17 @@ namespace NW.CursoMvc.Application
             return Mapper.Map<ProdutoViewModel>(produtoReturn);
         }
 
+        public ProdutoViewModel AdicionarProdForn(ProdutoViewModel produtoViewModel, Guid id)
+        {
+            var produto = Mapper.Map<Produto>(produtoViewModel);
+
+            var prodReturn = _produtoService.AdicionarProdForn(produto, id);
+
+            Commit();
+
+            return Mapper.Map<ProdutoViewModel>(prodReturn);
+        }
+
         public ProdutoViewModel Atualizar(ProdutoViewModel produtoViewModel)
         {
             var prod = _produtoService.ObterPorId(produtoViewModel.ProdutoId);

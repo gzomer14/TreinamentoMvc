@@ -20,6 +20,11 @@ namespace NW.CursoMvc.Domain.Services
             return _produtoRepository.Adicionar(produto);
         }
 
+        public Produto AdicionarProdForn(Produto produto, Guid id)
+        {
+            return _produtoRepository.AdicionarProdForn(produto, id);
+        }
+
         public Produto Atualizar(Produto produto)
         {
             return _produtoRepository.Atualizar(produto);

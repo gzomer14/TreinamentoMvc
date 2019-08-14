@@ -10,6 +10,8 @@ namespace NW.CursoMvc.Application.Interfaces
 
         ProdutoViewModel ObterPorId(Guid id);
 
+        ProdutoViewModel AdicionarProdForn(ProdutoViewModel produtoViewModel, Guid id);
+
         IEnumerable<ProdutoViewModel> ObterPorFornecedor(Guid id); 
             
         ProdutoViewModel Atualizar(ProdutoViewModel produtoViewModel);

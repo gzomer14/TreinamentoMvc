@@ -9,6 +9,8 @@ namespace NW.CursoMvc.Domain.Interfaces.Services
     {
         Produto Adicionar(Produto produto);
 
+        Produto AdicionarProdForn(Produto produto, Guid id);
+
         Produto ObterPorId(Guid id);
 
         Produto Atualizar(Produto produto);
