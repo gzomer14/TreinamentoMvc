@@ -32,19 +32,10 @@ namespace NW.CursoMvc.UI.Site.Controllers
         // GET: Fornecedores/Details/5
         public ActionResult Produtos(Guid? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            var prodcontroller = new ProdutosController(null);
+            prodcontroller.ControllerContext = ControllerContext;
 
-            var fornecedorViewModel = _fornecedorAppService.ObterPorId(id.Value);
-            var produtos = fornecedorViewModel.Produtos;
-
-            if (fornecedorViewModel == null)
-            {
-                return HttpNotFound();
-            }
-            return View(produtos);
+            return prodcontroller.Index();
         }
 
         // GET: Fornecedores/Create
