@@ -20,6 +20,8 @@ namespace NW.CursoMvc.Domain.Interfaces.Services
 
         Fornecedor Atualizar(Fornecedor fornecedor);
 
+        void RemoverFornecedor(Guid id);
+
         void Remover(Guid id);
     }
 }

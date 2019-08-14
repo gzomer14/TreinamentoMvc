@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using NW.CursoMvc.Domain.Entities;
 
 namespace NW.CursoMvc.Domain.Interfaces.Repository
@@ -8,6 +9,8 @@ namespace NW.CursoMvc.Domain.Interfaces.Repository
         Fornecedor ObterPorCpf(string cpf);
 
         Fornecedor ObterPorEmail(string email);
+
+        void RemoverFornecedor(Guid id);
 
         IEnumerable<Fornecedor> ObterAtivos();
 

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using NW.CursoMvc.Domain.Entities;
+using System;
 using System.Collections.Generic;
-using NW.CursoMvc.Domain.Entities;
 
 namespace NW.CursoMvc.Domain.Interfaces.Repository
 {

@@ -46,6 +46,14 @@ namespace NW.CursoMvc.Infra.Data.Repository
             return cn.Query<Fornecedor>(sql);
         }
 
+        public void RemoverFornecedor(Guid id)
+        {
+            var cn = Db.Database.Connection;
+            var sql = "update Fornecedor set ativo = 'False' where FornecedorId = @idforn";
+
+            cn.Query<Fornecedor>(sql, new {idforn = id});
+        }
+
         public override Fornecedor ObterPorId(Guid id)
         {
             var cn = Db.Database.Connection;

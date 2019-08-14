@@ -29,16 +29,6 @@ namespace NW.CursoMvc.UI.Site.Controllers
             return View(_fornecedorAppService.ObterTodos());
         }
 
-        //// GET: Fornecedores/Details/5
-        //public ActionResult Produtos(Guid id)
-        //{
-        //    var prodcontroller = new ProdutosController();
-        //    var idForn = id;
-        //    prodcontroller.ControllerContext = ControllerContext;
-
-        //    return prodcontroller.Index(idForn);
-        //}
-
         // GET: Fornecedores/Create
         public ActionResult Create()
         {
@@ -116,7 +106,7 @@ namespace NW.CursoMvc.UI.Site.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            _fornecedorAppService.Remover(id);
+            _fornecedorAppService.RemoverFornecedor(id);
             return RedirectToAction("Index");
         }
 
@@ -129,9 +119,5 @@ namespace NW.CursoMvc.UI.Site.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult test(string button)
-        {
-            return View("Teste");
-        }
     }
 }

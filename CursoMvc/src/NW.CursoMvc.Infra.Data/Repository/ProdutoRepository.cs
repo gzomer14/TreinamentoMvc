@@ -23,6 +23,8 @@ namespace NW.CursoMvc.Infra.Data.Repository
                         "ON p.FornecedorId = f.FornecedorId " +
                         "WHERE p.FornecedorId = @sid";
 
+            
+
             var produto = cn.Query<Produto>(sql, new {sid = id});
 
             return produto;

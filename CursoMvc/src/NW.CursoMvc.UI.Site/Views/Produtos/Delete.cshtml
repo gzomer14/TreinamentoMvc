@@ -1,4 +1,4 @@
-﻿@model NW.CursoMvc.Domain.Entities.Produto
+﻿@model NW.CursoMvc.Application.ViewModels.ProdutoViewModel
 
 @{
     ViewBag.Title = "Delete";
@@ -11,14 +11,6 @@
     <h4>Produto</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Fornecedor.nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Fornecedor.nome)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.nomeProd)
         </dt>
@@ -53,12 +45,13 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Voltar para lista de produtos", "Produtos", "Produtos")
         </div>
     }
 </div>

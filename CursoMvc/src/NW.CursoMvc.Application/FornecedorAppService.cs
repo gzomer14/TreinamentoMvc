@@ -81,6 +81,11 @@ namespace NW.CursoMvc.Application
             return Mapper.Map<IEnumerable<FornecedorViewModel>>(_fornecedorService.ObterAtivos().ToList());
         }
 
+        public void RemoverFornecedor(Guid id)
+        {
+            _fornecedorService.RemoverFornecedor(id);
+        }
+
         public void Remover(Guid id)
         {
             _fornecedorService.Remover(id);

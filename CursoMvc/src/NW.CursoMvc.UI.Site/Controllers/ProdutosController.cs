@@ -13,22 +13,24 @@ using NW.CursoMvc.UI.Site.Models;
 
 namespace NW.CursoMvc.UI.Site.Controllers
 {
+    [RoutePrefix("Fornecedores")]
     public class ProdutosController : Controller
     {
         private readonly IProdutoAppService _produtoAppService;
+        public static Guid idprov;
 
         public ProdutosController(IProdutoAppService produtoAppService)
         {
             _produtoAppService = produtoAppService;
         }
-
-        // GET: Produtos
-        public ActionResult Index(Guid id)
+        [Route("{id=guid}/Produtos")]
+        public ActionResult Produtos(Guid id)
         {
+            idprov = id;
             return View(_produtoAppService.ObterPorFornecedor(id));
         }
 
-        // GET: Produtos/Create
+                // GET: Produtos/Create
         public ActionResult Create()
         {
             return View();
@@ -37,17 +39,60 @@ namespace NW.CursoMvc.UI.Site.Controllers
         // POST: Produtos/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ProdutoViewModel produtoViewModel, Guid id)
+        public ActionResult Create(ProdutoViewModel produtoViewModel)
         {
-            if (ModelState.IsValid)
-            {
-                produtoViewModel = _produtoAppService.AdicionarProdForn(produtoViewModel, id);
+             if (ModelState.IsValid)
+             {
+                produtoViewModel = _produtoAppService.AdicionarProdForn(produtoViewModel, idprov);
 
                 return RedirectToAction("Index","Fornecedores");
+             }
+
+             return View(produtoViewModel);
+        }
+
+        // GET: Produtos/Delete/5
+        public ActionResult Delete(Guid? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
+            var produtoViewModel = _produtoAppService.ObterPorId(id.Value);
+            if (produtoViewModel == null)
+            {
+                return HttpNotFound();
+            }
             return View(produtoViewModel);
         }
+
+        // POST: Produtos/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(Guid id)
+        {
+           _produtoAppService.Remover(id);
+            return RedirectToAction("Produtos");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _produtoAppService.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+
+        //// GET: Produtos
+        //public ActionResult Index(Guid id)
+        //{
+        //    return View(_produtoAppService.ObterPorFornecedor(id));
+        //}
+
+
         //// GET: Produtos/Details/5
         //public ActionResult Details(Guid? id)
         //{
@@ -97,39 +142,6 @@ namespace NW.CursoMvc.UI.Site.Controllers
         //    return View(produto);
         //}
 
-        //// GET: Produtos/Delete/5
-        //public ActionResult Delete(Guid? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Produto produto = db.Produtos.Find(id);
-        //    if (produto == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(produto);
-        //}
 
-        //// POST: Produtos/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(Guid id)
-        //{
-        //    Produto produto = db.Produtos.Find(id);
-        //    db.Produtos.Remove(produto);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
-
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        db.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
     }
 }

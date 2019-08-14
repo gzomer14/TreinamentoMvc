@@ -18,6 +18,8 @@ namespace NW.CursoMvc.Application.Interfaces
 
         FornecedorViewModel Atualizar(FornecedorViewModel fornecedorViewModel);
 
+        void RemoverFornecedor(Guid id);
+
         void Remover(Guid id);
     }
 }
