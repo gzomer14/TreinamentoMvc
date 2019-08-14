@@ -30,6 +30,14 @@ namespace NW.CursoMvc.Infra.Data.Repository
             return produto;
         }
 
+        public void RemoverProduto(Guid id)
+        {
+            var cn = Db.Database.Connection;
+            var sql = "delete from Produto where ProdutoId = @idprod";
+
+            cn.Query<Fornecedor>(sql, new { idprod = id });
+        }
+
         public Produto AdicionarProdForn(Produto produto, Guid id)
         {
             var cn = Db.Database.Connection;

@@ -16,6 +16,8 @@ namespace NW.CursoMvc.Application.Interfaces
             
         ProdutoViewModel Atualizar(ProdutoViewModel produtoViewModel);
 
+        void RemoverProduto(Guid id);
+
         void Remover(Guid id);
     }
 }

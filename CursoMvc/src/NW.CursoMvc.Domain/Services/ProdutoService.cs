@@ -46,6 +46,11 @@ namespace NW.CursoMvc.Domain.Services
             return _produtoRepository.ObterPorFornecedor(id);
         }
 
+        public void RemoverProduto(Guid id)
+        {
+            _produtoRepository.RemoverProduto(id);
+        }
+
         public void Remover(Guid id)
         {
             _produtoRepository.Remover(id);

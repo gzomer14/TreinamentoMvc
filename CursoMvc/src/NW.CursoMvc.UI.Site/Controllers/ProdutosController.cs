@@ -72,7 +72,7 @@ namespace NW.CursoMvc.UI.Site.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-           _produtoAppService.Remover(id);
+           _produtoAppService.RemoverProduto(id);
             return RedirectToAction("Produtos");
         }
 

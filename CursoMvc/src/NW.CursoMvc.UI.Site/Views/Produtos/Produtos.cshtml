@@ -39,7 +39,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.peso)
                 </td>
-                <td></td>
+                <td>@Html.ActionLink("Deletar","Delete",new {id = item.ProdutoId})</td>
             </tr>
         }
 

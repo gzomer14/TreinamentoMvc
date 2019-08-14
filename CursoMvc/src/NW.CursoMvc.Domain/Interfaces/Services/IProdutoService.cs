@@ -17,6 +17,8 @@ namespace NW.CursoMvc.Domain.Interfaces.Services
 
         IEnumerable<Produto> ObterPorFornecedor(Guid id);
 
+        void RemoverProduto(Guid id);
+
         void Remover(Guid id);
     }
 }

@@ -71,6 +71,11 @@ namespace NW.CursoMvc.Application
             return Mapper.Map<IEnumerable<ProdutoViewModel>>(_produtoService.ObterPorFornecedor(id));
         }
 
+        public void RemoverProduto(Guid id)
+        {
+            _produtoService.RemoverProduto(id);
+        }
+
         public void Remover(Guid id)
         {
             _produtoService.Remover(id);
