@@ -10,7 +10,7 @@ namespace NW.CursoMvc.Application.Interfaces
 
         ProdutoViewModel ObterPorId(Guid id);
 
-        IEnumerable<ProdutoViewModel> ObterTodos(); 
+        IEnumerable<ProdutoViewModel> ObterPorFornecedor(Guid id); 
             
         ProdutoViewModel Atualizar(ProdutoViewModel produtoViewModel);
 

@@ -22,9 +22,9 @@ namespace NW.CursoMvc.UI.Site.Controllers
         }
 
         // GET: Produtos
-        public ActionResult Index()
+        public ActionResult Index(Guid id)
         {
-            return View(_produtoAppService.ObterTodos());
+            return View(_produtoAppService.ObterPorFornecedor(id));
         }
 
         //// GET: Produtos/Details/5

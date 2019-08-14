@@ -15,14 +15,17 @@ namespace NW.CursoMvc.Infra.Data.Repository
 
         }
 
-        public IEnumerable<Produto> ObterTodos()
+        public IEnumerable<Produto> ObterPorFornecedor(Guid id)
         {
             var cn = Db.Database.Connection;
-            var sql = @"SELECT * FROM Produto";
+            var sql = @"SELECT * FROM Produto p " +
+                        "INNER JOIN Fornecedor f " +
+                        "ON p.FornecedorId = f.FornecedorId " +
+                        "WHERE p.FornecedorId = @sid";
 
-                        
+            var produto = cn.Query<Produto>(sql, new {sid = id});
 
-            return cn.Query<Produto>(sql);
+            return produto;
         }
 
     }

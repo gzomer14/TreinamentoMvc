@@ -13,7 +13,7 @@ namespace NW.CursoMvc.Domain.Interfaces.Services
 
         Produto Atualizar(Produto produto);
 
-        IEnumerable<Produto> ObterTodos();
+        IEnumerable<Produto> ObterPorFornecedor(Guid id);
 
         void Remover(Guid id);
     }

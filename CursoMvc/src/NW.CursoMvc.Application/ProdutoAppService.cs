@@ -55,9 +55,9 @@ namespace NW.CursoMvc.Application
             return Mapper.Map<ProdutoViewModel>(prod);
         }
 
-        public IEnumerable<ProdutoViewModel> ObterTodos()
+        public IEnumerable<ProdutoViewModel> ObterPorFornecedor(Guid id)
         {
-            return Mapper.Map<IEnumerable<ProdutoViewModel>>(_produtoService.ObterTodos());
+            return Mapper.Map<IEnumerable<ProdutoViewModel>>(_produtoService.ObterPorFornecedor(id));
         }
 
         public void Remover(Guid id)

@@ -36,9 +36,9 @@ namespace NW.CursoMvc.Domain.Services
             return _produtoRepository.ObterPorId(id);
         }
 
-        public IEnumerable<Produto> ObterTodos()
+        public IEnumerable<Produto> ObterPorFornecedor(Guid id)
         {
-            return _produtoRepository.ObterTodos();
+            return _produtoRepository.ObterPorFornecedor(id);
         }
 
         public void Remover(Guid id)

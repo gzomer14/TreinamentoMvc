@@ -29,14 +29,15 @@ namespace NW.CursoMvc.UI.Site.Controllers
             return View(_fornecedorAppService.ObterTodos());
         }
 
-        // GET: Fornecedores/Details/5
-        public ActionResult Produtos(Guid? id)
-        {
-            var prodcontroller = new ProdutosController(null);
-            prodcontroller.ControllerContext = ControllerContext;
+        //// GET: Fornecedores/Details/5
+        //public ActionResult Produtos(Guid id)
+        //{
+        //    var prodcontroller = new ProdutosController();
+        //    var idForn = id;
+        //    prodcontroller.ControllerContext = ControllerContext;
 
-            return prodcontroller.Index();
-        }
+        //    return prodcontroller.Index(idForn);
+        //}
 
         // GET: Fornecedores/Create
         public ActionResult Create()
