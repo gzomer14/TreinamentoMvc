@@ -30,9 +30,9 @@ namespace NW.CursoMvc.UI.Site.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<NW.CursoMvc.Domain.Entities.Produto> Produtoes { get; set; }
+        //public System.Data.Entity.DbSet<NW.CursoMvc.Domain.Entities.Produto> Produtos { get; set; }
 
-        public System.Data.Entity.DbSet<NW.CursoMvc.Domain.Entities.Fornecedor> Fornecedors { get; set; }
+        //public System.Data.Entity.DbSet<NW.CursoMvc.Domain.Entities.Fornecedor> Fornecedors { get; set; }
 
         //public System.Data.Entity.DbSet<NW.CursoMvc.Application.ViewModels.FornecedorViewModel> FornecedorViewModels { get; set; }
     }

@@ -21,14 +21,17 @@ namespace NW.CursoMvc.Infra.CrossCutting.IoC
             // App
             container.Register<IClienteAppService, ClienteAppService>(Lifestyle.Scoped);
             container.Register<IFornecedorAppService, FornecedorAppService>(Lifestyle.Scoped);
+            container.Register<IProdutoAppService, ProdutoAppService>(Lifestyle.Scoped);
 
             // Domain
             container.Register<IClienteService, ClienteService>(Lifestyle.Scoped);
             container.Register<IFornecedorService, FornecedorService>(Lifestyle.Scoped);
+            container.Register<IProdutoService, ProdutoService>(Lifestyle.Scoped);
 
             // Data
             container.Register<IClienteRepository, ClienteRepository>(Lifestyle.Scoped);
             container.Register<IFornecedorRepository, FornecedorRepository>(Lifestyle.Scoped);
+            container.Register<IProdutoRepository, ProdutoRepository>(Lifestyle.Scoped);
             container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
             container.Register<CursoMvcContext>(Lifestyle.Scoped);
         }

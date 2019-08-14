@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NW.CursoMvc.Domain.Entities.Produto>
+﻿@model IEnumerable<NW.CursoMvc.Application.ViewModels.ProdutoViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -7,13 +7,10 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @*@Html.ActionLink("Create New", "Create")*@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Fornecedor.nome)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.nomeProd)
         </th>
@@ -32,9 +29,6 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Fornecedor.nome)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.nomeProd)
         </td>
         <td>
@@ -47,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.peso)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ProdutoId }) |
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.ProdutoId }) |
             @Html.ActionLink("Details", "Details", new { id=item.ProdutoId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ProdutoId })
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProdutoId })*@
         </td>
     </tr>
 }
