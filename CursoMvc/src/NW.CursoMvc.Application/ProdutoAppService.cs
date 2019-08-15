@@ -20,12 +20,17 @@ namespace NW.CursoMvc.Application
         {
             _produtoService = produtoService;
         }
-    
-        public ProdutoViewModel Adicionar(ProdutoViewModel produtoViewModel)
+
+        public IEnumerable<ProdutoViewModel> TodosProdutos()
+        {
+            return Mapper.Map<IEnumerable<ProdutoViewModel>>(_produtoService.TodosProdutos());
+        }
+
+        public ProdutoViewModel Adicionar(ProdutoViewModel produtoViewModel, Guid id)
         {
             var produto = Mapper.Map<Produto>(produtoViewModel);
 
-            var produtoReturn = _produtoService.Adicionar(produto);
+            var produtoReturn = _produtoService.Adicionar(produto,id);
 
             Commit();
 
@@ -43,11 +48,11 @@ namespace NW.CursoMvc.Application
             return Mapper.Map<ProdutoViewModel>(prodReturn);
         }
 
-        public ProdutoViewModel Atualizar(ProdutoViewModel produtoViewModel)
+        public ProdutoViewModel Atualizar(ProdutoViewModel produtoViewModel, Guid id)
         {
             var prod = _produtoService.ObterPorId(produtoViewModel.ProdutoId);
             var produto = Mapper.Map(produtoViewModel, prod);
-            var prodreturn = _produtoService.Atualizar(produto);
+            var prodreturn = _produtoService.Atualizar(produto,id);
             Commit();
 
             return produtoViewModel;

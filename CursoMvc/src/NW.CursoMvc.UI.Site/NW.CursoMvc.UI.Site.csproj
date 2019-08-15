@@ -270,7 +270,8 @@
     <Content Include="Views\Produtos\Delete.cshtml" />
     <Content Include="Views\Produtos\Details.cshtml" />
     <Content Include="Views\Produtos\Edit.cshtml" />
-    <Content Include="Views\Produtos\Produtos.cshtml" />
+    <Content Include="Views\Produtos\Fornecedor.cshtml" />
+    <Content Include="Views\Produtos\TodosProdutos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

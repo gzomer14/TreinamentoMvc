@@ -13,7 +13,6 @@ using NW.CursoMvc.UI.Site.Models;
 
 namespace NW.CursoMvc.UI.Site.Controllers
 {
-    [RoutePrefix("Fornecedores")]
     public class ProdutosController : Controller
     {
         private readonly IProdutoAppService _produtoAppService;
@@ -23,8 +22,13 @@ namespace NW.CursoMvc.UI.Site.Controllers
         {
             _produtoAppService = produtoAppService;
         }
-        [Route("{id=guid}/Produtos")]
-        public ActionResult Produtos(Guid id)
+
+        public ActionResult TodosProdutos()
+        {
+            return View(_produtoAppService.TodosProdutos());
+        }
+
+        public ActionResult Fornecedor(Guid id)
         {
             idprov = id;
             return View(_produtoAppService.ObterPorFornecedor(id));
@@ -39,11 +43,12 @@ namespace NW.CursoMvc.UI.Site.Controllers
         // POST: Produtos/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ProdutoViewModel produtoViewModel)
+        public ActionResult Create(ProdutoViewModel produtoViewModel,Guid? id)
         {
-             if (ModelState.IsValid)
+            id = idprov;
+            if (ModelState.IsValid)
              {
-                produtoViewModel = _produtoAppService.AdicionarProdForn(produtoViewModel, idprov);
+                produtoViewModel = _produtoAppService.Adicionar(produtoViewModel,id.Value);
 
                 return RedirectToAction("Index","Fornecedores");
              }
@@ -72,8 +77,9 @@ namespace NW.CursoMvc.UI.Site.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-           _produtoAppService.RemoverProduto(id);
-            return RedirectToAction("Produtos");
+
+            _produtoAppService.RemoverProduto(id);
+            return RedirectToAction("Index","Fornecedores");
         }
 
         protected override void Dispose(bool disposing)
@@ -84,7 +90,42 @@ namespace NW.CursoMvc.UI.Site.Controllers
             }
             base.Dispose(disposing);
         }
+        
+        // GET: Produtos/Edit/5
+        public ActionResult Edit(Guid? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
 
+            var produtoViewModel = _produtoAppService.ObterPorId(id.Value);
+
+            if (produtoViewModel == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(produtoViewModel);
+        }
+
+        // POST: Produtos/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(ProdutoViewModel produtoViewModel)
+        {
+            var id = idprov;
+            if (ModelState.IsValid)
+            {
+                _produtoAppService.Atualizar(produtoViewModel,id);
+
+                return RedirectToAction("Index","Fornecedores");
+            }
+
+            return View(produtoViewModel);
+        }
 
         //// GET: Produtos
         //public ActionResult Index(Guid id)
@@ -109,38 +150,7 @@ namespace NW.CursoMvc.UI.Site.Controllers
         //}
 
 
-        //// GET: Produtos/Edit/5
-        //public ActionResult Edit(Guid? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Produto produto = db.Produtos.Find(id);
-        //    if (produto == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    ViewBag.FornecedorId = new SelectList(db.Fornecedors, "FornecedorId", "nome", produto.FornecedorId);
-        //    return View(produto);
-        //}
 
-        //// POST: Produtos/Edit/5
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit([Bind(Include = "ProdutoId,nomeProd,descricao,valor,peso,FornecedorId")] Produto produto)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Entry(produto).State = EntityState.Modified;
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-        //    ViewBag.FornecedorId = new SelectList(db.Fornecedors, "FornecedorId", "nome", produto.FornecedorId);
-        //    return View(produto);
-        //}
 
 
     }

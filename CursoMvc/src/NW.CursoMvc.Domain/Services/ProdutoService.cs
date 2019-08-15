@@ -15,8 +15,14 @@ namespace NW.CursoMvc.Domain.Services
             _produtoRepository = produtoRepository;
         }
 
-        public Produto Adicionar(Produto produto)
+        public IEnumerable<Produto> TodosProdutos()
         {
+            return _produtoRepository.TodosProdutos();
+        }
+
+        public Produto Adicionar(Produto produto, Guid id)
+        {
+            produto.FornecedorId = id;
             return _produtoRepository.Adicionar(produto);
         }
 
@@ -25,8 +31,9 @@ namespace NW.CursoMvc.Domain.Services
             return _produtoRepository.AdicionarProdForn(produto, id);
         }
 
-        public Produto Atualizar(Produto produto)
+        public Produto Atualizar(Produto produto,Guid id)
         {
+            produto.FornecedorId = id;
             return _produtoRepository.Atualizar(produto);
         }
 

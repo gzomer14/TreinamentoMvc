@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Dapper;
 using NW.CursoMvc.Domain.Entities;
 using NW.CursoMvc.Domain.Interfaces.Repository;
@@ -55,8 +56,15 @@ namespace NW.CursoMvc.Infra.Data.Repository
                     FornecedorId = id
                 });
 
-            return null;
+            return prodreturn.FirstOrDefault();
         }
 
+        public IEnumerable<Produto> TodosProdutos()
+        {
+            var cn = Db.Database.Connection;
+            var sql = @"SELECT * FROM Produto";
+
+            return cn.Query<Produto>(sql);
+        }
     }
 }
