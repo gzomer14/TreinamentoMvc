@@ -1,0 +1,15 @@
+﻿@model NW.CursoMvc.Domain.Entities.CarrinhoCompras
+
+@{
+    ViewBag.Title = "Existencia";
+}
+
+<div class="text text-danger">
+    <h1>Erro</h1>
+</div>
+<b>Cliente já possui um carrinho aberto</b>
+<hr/>
+<div>
+    @Html.ActionLink("Voltar para clientes", "Index","Clientes")
+</div>
+

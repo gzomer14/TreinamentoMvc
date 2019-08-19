@@ -5,10 +5,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Clientes</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Criar novo cliente", "Create")
 </p>
 <table class="table">
     <tr>
@@ -42,9 +42,11 @@
             @Html.DisplayFor(modelItem => item.DataNascimento)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ClienteId }).IfClaimHelper("PermissoesCliente","CE") |
-            @Html.ActionLink("Details", "Details", new { id=item.ClienteId }).IfClaimHelper("PermissoesCliente", "CD") |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ClienteId }).IfClaimHelper("PermissoesCliente","CX")
+            @Html.ActionLink("Editar", "Edit", new { id=item.ClienteId }).IfClaimHelper("PermissoesCliente","CE") |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.ClienteId }).IfClaimHelper("PermissoesCliente", "CD") |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.ClienteId }).IfClaimHelper("PermissoesCliente","CX") |
+            @Html.ActionLink("Abrir carrinho de compras", "AbrirCarrinho", "CarrinhoCompras", new {id = item.ClienteId}, null) |
+            @Html.ActionLink("Ver carrinho", "VerCarrinho","CarrinhoCompras", new {idCliente = item.ClienteId}, null)
         </td>
     </tr>
 }

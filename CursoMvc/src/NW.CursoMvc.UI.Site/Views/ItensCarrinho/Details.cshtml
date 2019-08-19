@@ -1,0 +1,50 @@
+﻿@model NW.CursoMvc.Domain.Entities.ItensCarrinho
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ItensCarrinho</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Produto.nomeProd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Produto.nomeProd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarrinhoComprasId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarrinhoComprasId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ItensCarrinhoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

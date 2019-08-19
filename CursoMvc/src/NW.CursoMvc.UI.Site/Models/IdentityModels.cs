@@ -30,6 +30,22 @@ namespace NW.CursoMvc.UI.Site.Models
             return new ApplicationDbContext();
         }
 
+        //public System.Data.Entity.DbSet<NW.CursoMvc.Domain.Entities.CarrinhoCompras> CarrinhoCompras { get; set; }
+
+        //public System.Data.Entity.DbSet<NW.CursoMvc.Domain.Entities.Cliente> Clientes { get; set; }
+
+        //public System.Data.Entity.DbSet<NW.CursoMvc.Domain.Entities.CarrinhoCompras> CarrinhoCompras { get; set; }
+
+        //public System.Data.Entity.DbSet<NW.CursoMvc.Domain.Entities.Cliente> Clientes { get; set; }
+
+        //public System.Data.Entity.DbSet<NW.CursoMvc.Domain.Entities.ItensCarrinho> ItensCarrinhoes { get; set; }
+
+        //public System.Data.Entity.DbSet<NW.CursoMvc.Domain.Entities.Produto> Produtoes { get; set; }
+
+        //public System.Data.Entity.DbSet<NW.CursoMvc.Domain.Entities.CarrinhoCompras> CarrinhoCompras { get; set; }
+
+        //public System.Data.Entity.DbSet<NW.CursoMvc.Domain.Entities.Cliente> Clientes { get; set; }
+
         //public System.Data.Entity.DbSet<NW.CursoMvc.Domain.Entities.Produto> Produtoes { get; set; }
 
         //public System.Data.Entity.DbSet<NW.CursoMvc.Domain.Entities.Fornecedor> Fornecedors { get; set; }

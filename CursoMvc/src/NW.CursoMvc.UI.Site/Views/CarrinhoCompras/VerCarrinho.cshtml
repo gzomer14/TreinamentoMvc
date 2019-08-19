@@ -1,0 +1,50 @@
+﻿@model NW.CursoMvc.Application.ViewModels.CarrinhoComprasViewModel
+
+@{
+    ViewBag.Title = "VerCarrinho";
+}
+
+<h2>Carrinho de compras</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            <u>ID</u>
+        </th>
+        <th>
+            <u>Produto</u>
+        </th>
+        <th>
+            <u>Quantidade</u>
+        </th>
+        <th>
+            <u>Valor total do produto</u>
+        </th>
+    </tr>
+
+    @foreach (var item in Model.ItensCarrinho)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeProduto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorTotal)
+            </td>
+            <td>
+                @Html.ActionLink("Remover Produto", "RemoverProduto", "ItensCarrinho", new { idItem = item.ItensCarrinhoId, idCliente = Model.ClienteId }, null)
+            </td>
+        </tr>
+    }   
+</table>
+<u><b>Valor Final</b></u>
+<p>@Html.DisplayFor(Model => Model.somaValores)</p>
+<hr/>
+@Html.ActionLink("Adicionar mais produtos", "TodosProdutos", "Produtos", new { id = Model.CarrinhoCompraId }, null) | 
+@Html.ActionLink("Finalizar compra", "RemoverItens","ItensCarrinho", new { idCarrinho = Model.CarrinhoCompraId}, null)

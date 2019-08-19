@@ -1,0 +1,17 @@
+﻿@model NW.CursoMvc.Domain.Entities.CarrinhoCompras
+
+@{
+    ViewBag.Title = "SemCarrinho";
+}
+
+
+<div class="text text-danger">
+<h1>Erro</h1>
+</div>
+<b>Cliente não possui um carrinho. Favor abrir um carrinho antes</b>
+<hr/>
+<div>
+    @Html.ActionLink("Voltar para clientes", "Index","Clientes")
+</div>
+
+

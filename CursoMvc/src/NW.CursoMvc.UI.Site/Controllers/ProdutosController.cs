@@ -17,15 +17,30 @@ namespace NW.CursoMvc.UI.Site.Controllers
     {
         private readonly IProdutoAppService _produtoAppService;
         public static Guid idprov;
+        public static Guid idcarrinho;
 
         public ProdutosController(IProdutoAppService produtoAppService)
         {
             _produtoAppService = produtoAppService;
         }
 
-        public ActionResult TodosProdutos()
+        public ActionResult TodosProdutos(Guid? id)
         {
+            if (id != null)
+            {
+                idcarrinho = id.Value;
+            }
+                
             return View(_produtoAppService.TodosProdutos());
+        }
+
+        public ActionResult EnviarDadosItensCarrinho(Guid idProd)
+        {
+            return RedirectToAction("AdicionarProduto", "ItensCarrinho", new
+            {
+                idProd = idProd,
+                idCarrinho = idcarrinho
+            });
         }
 
         public ActionResult Fornecedor(Guid id)

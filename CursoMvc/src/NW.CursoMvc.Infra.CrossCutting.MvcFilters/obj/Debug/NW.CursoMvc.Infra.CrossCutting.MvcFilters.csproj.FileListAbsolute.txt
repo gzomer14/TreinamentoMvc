@@ -33,8 +33,8 @@ D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Infra.CrossCutting.MvcFilters\
 D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Infra.CrossCutting.MvcFilters\bin\Debug\System.Web.WebPages.xml
 D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Infra.CrossCutting.MvcFilters\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Infra.CrossCutting.MvcFilters\bin\Debug\System.Web.WebPages.Razor.xml
-D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Infra.CrossCutting.MvcFilters\obj\Debug\NW.CursoMvc.Infra.CrossCutting.MvcFilters.csprojAssemblyReference.cache
 D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Infra.CrossCutting.MvcFilters\obj\Debug\NW.CursoMvc.Infra.CrossCutting.MvcFilters.csproj.CoreCompileInputs.cache
 D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Infra.CrossCutting.MvcFilters\obj\Debug\NW.CursoMvc.Infra.CrossCutting.MvcFilters.csproj.CopyComplete
 D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Infra.CrossCutting.MvcFilters\obj\Debug\NW.CursoMvc.Infra.CrossCutting.MvcFilters.dll
 D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Infra.CrossCutting.MvcFilters\obj\Debug\NW.CursoMvc.Infra.CrossCutting.MvcFilters.pdb
+D:\GitHub\TreinamentoMvc\CursoMvc\src\NW.CursoMvc.Infra.CrossCutting.MvcFilters\obj\Debug\NW.CursoMvc.Infra.CrossCutting.MvcFilters.csprojAssemblyReference.cache

@@ -4,7 +4,7 @@
     ViewBag.Title = "TodosProdutos";
 }
 
-<h2>TodosProdutos</h2>
+<h2>Todos os produtos</h2>
 
 
 <table class="table">
@@ -39,7 +39,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.peso)
             </td>
+            <td>@Html.ActionLink("Adicionar ao carrinho","EnviarDadosItensCarrinho","Produtos", new {idProd = item.ProdutoId}, null)</td>
         </tr>
     }
 
 </table>
+@Html.ActionLink("Finalizar pedido","Index","Clientes")
