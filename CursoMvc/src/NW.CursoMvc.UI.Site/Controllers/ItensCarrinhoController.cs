@@ -44,11 +44,18 @@ namespace NW.CursoMvc.UI.Site.Controllers
             return RedirectToAction("VerCarrinho", "CarrinhoCompras", new {idCliente = idCliente});
         }
 
-        public ActionResult RemoverItens(Guid? idCarrinho)
+        public ActionResult RemoverItensParaCompra(Guid? idCarrinho)
         {
             _itensCarrinhoAppService.RemoverItens(idCarrinho.Value);
 
             return RedirectToAction("FinalizarCompra","CarrinhoCompras", new{id = idCarrinho.Value });
+        }
+
+        public ActionResult RemoverItens(Guid? idCarrinho)
+        {
+            _itensCarrinhoAppService.RemoverItens(idCarrinho.Value);
+
+            return RedirectToAction("RemoverCarrinho", "CarrinhoCompras", new { id = idCarrinho.Value });
         }
 
         //// GET: ItensCarrinho/Details/5

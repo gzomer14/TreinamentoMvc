@@ -41,10 +41,11 @@
                 @Html.ActionLink("Remover Produto", "RemoverProduto", "ItensCarrinho", new { idItem = item.ItensCarrinhoId, idCliente = Model.ClienteId }, null)
             </td>
         </tr>
-    }   
+    }
 </table>
 <u><b>Valor Final</b></u>
 <p>@Html.DisplayFor(Model => Model.somaValores)</p>
-<hr/>
-@Html.ActionLink("Adicionar mais produtos", "TodosProdutos", "Produtos", new { id = Model.CarrinhoCompraId }, null) | 
-@Html.ActionLink("Finalizar compra", "RemoverItens","ItensCarrinho", new { idCarrinho = Model.CarrinhoCompraId}, null)
+<hr />
+@Html.ActionLink("Adicionar mais produtos", "TodosProdutos", "Produtos", new { id = Model.CarrinhoCompraId }, null) |
+@Html.ActionLink("Comprar", "RemoverItensParaCompra", "ItensCarrinho", new { idCarrinho = Model.CarrinhoCompraId }, null) |
+@Html.ActionLink("Cancelar Compra", "RemoverItens", "ItensCarrinho", new { idCarrinho = Model.CarrinhoCompraId }, null)

@@ -43,7 +43,7 @@ namespace NW.CursoMvc.UI.Site.Controllers
             });
         }
 
-        public ActionResult Fornecedor(Guid id)
+        public ActionResult ProdutoForn(Guid id)
         {
             idprov = id;
             return View(_produtoAppService.ObterPorFornecedor(id));
@@ -65,7 +65,7 @@ namespace NW.CursoMvc.UI.Site.Controllers
              {
                 produtoViewModel = _produtoAppService.Adicionar(produtoViewModel,id.Value);
 
-                return RedirectToAction("Index","Fornecedores");
+                return RedirectToAction("ProdutoForn","Produtos", new {id = idprov});
              }
 
              return View(produtoViewModel);
@@ -94,7 +94,7 @@ namespace NW.CursoMvc.UI.Site.Controllers
         {
 
             _produtoAppService.RemoverProduto(id);
-            return RedirectToAction("Index","Fornecedores");
+            return RedirectToAction("ProdutoForn", "Produtos", new { id = idprov });
         }
 
         protected override void Dispose(bool disposing)

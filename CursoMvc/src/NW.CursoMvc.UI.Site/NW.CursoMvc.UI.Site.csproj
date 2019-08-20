@@ -272,7 +272,7 @@
     <Content Include="Views\Produtos\Delete.cshtml" />
     <Content Include="Views\Produtos\Details.cshtml" />
     <Content Include="Views\Produtos\Edit.cshtml" />
-    <Content Include="Views\Produtos\Fornecedor.cshtml" />
+    <Content Include="Views\Produtos\ProdutoForn.cshtml" />
     <Content Include="Views\Produtos\TodosProdutos.cshtml" />
     <Content Include="Views\CarrinhoCompras\Create.cshtml" />
     <Content Include="Views\CarrinhoCompras\Delete.cshtml" />

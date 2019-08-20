@@ -55,6 +55,13 @@ namespace NW.CursoMvc.UI.Site.Controllers
             return View("FinalizarCompra");
         }
 
+        public ActionResult RemoverCarrinho(Guid id)
+        {
+            _carrinhoComprasAppService.Remover(id);
+
+            return RedirectToAction("Index", "Clientes");
+        }
+
 
         //// GET: CarrinhoCompras
         //public ActionResult Index()
