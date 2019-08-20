@@ -81,6 +81,8 @@ namespace NW.CursoMvc.Application
         public void Remover(Guid id)
         {
             _clienteService.Remover(id);
+
+            Commit();
         }
     }
 }
