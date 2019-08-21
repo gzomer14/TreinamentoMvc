@@ -55,9 +55,11 @@
     <Compile Include="CarrinhoComprasAppService.cs" />
     <Compile Include="ClienteAppService.cs" />
     <Compile Include="FornecedorAppService.cs" />
+    <Compile Include="HistoricoComprasAppService.cs" />
     <Compile Include="Interfaces\ICarrinhoComprasAppService.cs" />
     <Compile Include="Interfaces\IClienteAppService.cs" />
     <Compile Include="Interfaces\IFornecedorAppService.cs" />
+    <Compile Include="Interfaces\IHistoricoComprasAppService.cs" />
     <Compile Include="Interfaces\IItensCarrinhoAppService.cs" />
     <Compile Include="Interfaces\IProdutoAppService.cs" />
     <Compile Include="ItensCarrinhoAppService.cs" />
@@ -69,6 +71,8 @@
     <Compile Include="ViewModels\EnderecoViewModel.cs" />
     <Compile Include="ViewModels\FornecedorProdutoViewModel.cs" />
     <Compile Include="ViewModels\FornecedorViewModel.cs" />
+    <Compile Include="ViewModels\HistoricoComprasViewModel.cs" />
+    <Compile Include="ViewModels\ItensCarrinhoHistoricoViewModel.cs" />
     <Compile Include="ViewModels\ItensCarrinhoViewModel.cs" />
     <Compile Include="ViewModels\ProdutoViewModel.cs" />
   </ItemGroup>

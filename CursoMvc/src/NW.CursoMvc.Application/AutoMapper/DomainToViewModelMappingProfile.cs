@@ -23,6 +23,8 @@ namespace NW.CursoMvc.Application.AutoMapper
             CreateMap<ItensCarrinho, CarrinhoComprasViewModel>();
             CreateMap<ItensCarrinho, ProdutoViewModel>();
             CreateMap<ItensCarrinho, ItensCarrinhoViewModel>();
+
+            CreateMap<HistoricoCompras, HistoricoComprasViewModel>();
         }
     }
 }

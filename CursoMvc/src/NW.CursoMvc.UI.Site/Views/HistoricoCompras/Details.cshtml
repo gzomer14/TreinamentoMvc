@@ -1,0 +1,66 @@
+﻿@model NW.CursoMvc.Domain.Entities.HistoricoCompras
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HistoricoCompras</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Produto.nomeProd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Produto.nomeProd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeProd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeProd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorProd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorProd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalGasto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalGasto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantidadeProd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantidadeProd)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.HistoricoComprasId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

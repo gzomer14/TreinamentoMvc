@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using NW.CursoMvc.Domain.Entities;
 
 namespace NW.CursoMvc.Application.ViewModels
 {
@@ -52,6 +53,8 @@ namespace NW.CursoMvc.Application.ViewModels
 
 
         public ICollection<EnderecoViewModel> Enderecos { get; set; }
+
+        public virtual ICollection<HistoricoCompras> HistoricoCompras { get; set; }
 
     }
 }

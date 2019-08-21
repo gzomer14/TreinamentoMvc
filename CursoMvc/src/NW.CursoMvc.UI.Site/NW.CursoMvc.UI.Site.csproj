@@ -187,8 +187,10 @@
     <Compile Include="Controllers\CarrinhoComprasController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\FornecedoresController.cs" />
+    <Compile Include="Controllers\HistoricoComprasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItensCarrinhoController.cs" />
+    <Compile Include="Controllers\ItensCarrinhoHistoricoController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -287,6 +289,18 @@
     <Content Include="Views\CarrinhoCompras\SemCarrinho.cshtml" />
     <Content Include="Views\CarrinhoCompras\Existencia.cshtml" />
     <Content Include="Views\CarrinhoCompras\FinalizarCompra.cshtml" />
+    <Content Include="Views\HistoricoCompras\Create.cshtml" />
+    <Content Include="Views\HistoricoCompras\Delete.cshtml" />
+    <Content Include="Views\HistoricoCompras\Details.cshtml" />
+    <Content Include="Views\HistoricoCompras\Edit.cshtml" />
+    <Content Include="Views\HistoricoCompras\Index.cshtml" />
+    <Content Include="Views\HistoricoCompras\VerHistoricoPorCliente.cshtml" />
+    <Content Include="Views\ItensCarrinhoHistorico\Create.cshtml" />
+    <Content Include="Views\ItensCarrinhoHistorico\Delete.cshtml" />
+    <Content Include="Views\ItensCarrinhoHistorico\Details.cshtml" />
+    <Content Include="Views\ItensCarrinhoHistorico\Edit.cshtml" />
+    <Content Include="Views\ItensCarrinhoHistorico\Index.cshtml" />
+    <Content Include="Views\HistoricoCompras\SemHistorico.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

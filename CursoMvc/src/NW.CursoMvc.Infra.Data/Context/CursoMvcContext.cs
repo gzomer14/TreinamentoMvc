@@ -21,6 +21,8 @@ namespace NW.CursoMvc.Infra.Data.Context
         public DbSet<Produto> Produto { get; set; }
         public DbSet<CarrinhoCompras> CarrinhoCompras { get; set; }
         public DbSet<ItensCarrinho> ItensCarrinho { get; set; }
+        public DbSet<HistoricoCompras> HistoricoCompras { get; set; }
+        public DbSet<ItensCarrinhoHistorico> ItensCarrinhoHistorico { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -44,6 +46,8 @@ namespace NW.CursoMvc.Infra.Data.Context
             modelBuilder.Configurations.Add(new ProdutoConfig());
             modelBuilder.Configurations.Add(new CarrinhoComprasConfig());
             modelBuilder.Configurations.Add(new ItensCarrinhoConfig());
+            modelBuilder.Configurations.Add(new HistoricoComprasConfig());
+            modelBuilder.Configurations.Add(new ItensCarrinhoHistoricoConfig());
 
             base.OnModelCreating(modelBuilder);
         }

@@ -46,7 +46,8 @@
             @Html.ActionLink("Detalhes", "Details", new { id=item.ClienteId }).IfClaimHelper("PermissoesCliente", "CD") |
             @Html.ActionLink("Deletar", "Delete", new { id=item.ClienteId }).IfClaimHelper("PermissoesCliente","CX") |
             @Html.ActionLink("Abrir carrinho de compras", "AbrirCarrinho", "CarrinhoCompras", new {id = item.ClienteId}, null) |
-            @Html.ActionLink("Ver carrinho", "VerCarrinho","CarrinhoCompras", new {idCliente = item.ClienteId}, null)
+            @Html.ActionLink("Ver carrinho", "VerCarrinho","CarrinhoCompras", new {idCliente = item.ClienteId}, null) | 
+            @Html.ActionLink("Historico de compras", "VerHistoricoPorCliente", "HistoricoCompras",new {idCliente = item.ClienteId}, null)
         </td>
     </tr>
 }

@@ -24,6 +24,7 @@ namespace NW.CursoMvc.Infra.CrossCutting.IoC
             container.Register<IProdutoAppService, ProdutoAppService>(Lifestyle.Scoped);
             container.Register<IItensCarrinhoAppService, ItensCarrinhoAppService>(Lifestyle.Scoped);
             container.Register<ICarrinhoComprasAppService, CarrinhoComprasAppService>(Lifestyle.Scoped);
+            container.Register<IHistoricoComprasAppService, HistoricoComprasAppService>(Lifestyle.Scoped);
 
             // Domain
             container.Register<IClienteService, ClienteService>(Lifestyle.Scoped);
@@ -31,6 +32,7 @@ namespace NW.CursoMvc.Infra.CrossCutting.IoC
             container.Register<IProdutoService, ProdutoService>(Lifestyle.Scoped);
             container.Register<IItensCarrinhoService, ItensCarrinhoService>(Lifestyle.Scoped);
             container.Register<ICarrinhoComprasService, CarrinhoComprasService>(Lifestyle.Scoped);
+            container.Register<IHistoricoComprasService, HistoricoComprasService>(Lifestyle.Scoped);
 
             // Data
             container.Register<IClienteRepository, ClienteRepository>(Lifestyle.Scoped);
@@ -38,6 +40,7 @@ namespace NW.CursoMvc.Infra.CrossCutting.IoC
             container.Register<IProdutoRepository, ProdutoRepository>(Lifestyle.Scoped);
             container.Register<IItensCarrinhoRepository, ItensCarrinhoRepository>(Lifestyle.Scoped);
             container.Register<ICarrinhoComprasRepository, CarrinhoComprasRepository>(Lifestyle.Scoped);
+            container.Register<IHistoricoComprasRepository, HistoricoComprasRepository>(Lifestyle.Scoped);
             container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
             container.Register<CursoMvcContext>(Lifestyle.Scoped);
         }

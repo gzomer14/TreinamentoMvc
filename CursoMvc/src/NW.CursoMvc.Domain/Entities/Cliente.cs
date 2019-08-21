@@ -22,6 +22,7 @@ namespace NW.CursoMvc.Domain.Entities
         public DateTime DataCadastro { get; set; }
         public bool Ativo { get; set; }
         public virtual ICollection<Endereco> Enderecos { get; set; }
+        public virtual ICollection<HistoricoCompras> HistoricoCompras { get; set; }
         public ValidationResult ValidationResult { get; set; }
 
         public bool IsValid()

@@ -62,13 +62,16 @@
     <Compile Include="EntityConfig\ClienteConfig.cs" />
     <Compile Include="EntityConfig\EnderecoConfig.cs" />
     <Compile Include="EntityConfig\FornecedorConfig.cs" />
+    <Compile Include="EntityConfig\HistoricoComprasConfig.cs" />
     <Compile Include="EntityConfig\ItensCarrinhoConfig.cs" />
+    <Compile Include="EntityConfig\ItensCarrinhoHistoricoConfig.cs" />
     <Compile Include="EntityConfig\ProdutoConfig.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CarrinhoComprasRepository.cs" />
     <Compile Include="Repository\ClienteRepository.cs" />
     <Compile Include="Repository\FornecedorRepository.cs" />
+    <Compile Include="Repository\HistoricoComprasRepository.cs" />
     <Compile Include="Repository\ItensCarrinhoRepository.cs" />
     <Compile Include="Repository\ProdutoRepository.cs" />
     <Compile Include="Repository\Repository.cs" />

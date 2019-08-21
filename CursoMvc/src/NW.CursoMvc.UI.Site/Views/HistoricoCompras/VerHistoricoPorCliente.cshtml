@@ -1,0 +1,27 @@
+﻿@model ICollection<NW.CursoMvc.Domain.Entities.ItensCarrinhoHistorico>
+
+@{
+    ViewBag.Title = "VerHistoricoPorCliente";
+}
+
+<h2>Historico de compras do cliente</h2>
+
+<table class="table">
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeProduto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorTotal)
+            </td>
+        </tr>
+    }
+</table>
+
+<hr/>
+@Html.ActionLink("Voltar para os clientes","Index","Clientes")
+

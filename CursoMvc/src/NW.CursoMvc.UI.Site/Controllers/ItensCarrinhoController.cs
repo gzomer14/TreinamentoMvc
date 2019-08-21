@@ -16,10 +16,12 @@ namespace NW.CursoMvc.UI.Site.Controllers
     public class ItensCarrinhoController : Controller
     {
         private readonly IItensCarrinhoAppService _itensCarrinhoAppService;
+        private readonly IHistoricoComprasAppService _historicoComprasAppService;
 
-        public ItensCarrinhoController(IItensCarrinhoAppService itensCarrinhoAppService)
+        public ItensCarrinhoController(IItensCarrinhoAppService itensCarrinhoAppService, IHistoricoComprasAppService historicoComprasAppService)
         {
             _itensCarrinhoAppService = itensCarrinhoAppService;
+            _historicoComprasAppService = historicoComprasAppService;
         }
 
         [HttpGet]
@@ -46,6 +48,8 @@ namespace NW.CursoMvc.UI.Site.Controllers
 
         public ActionResult RemoverItensParaCompra(Guid? idCarrinho)
         {
+            _historicoComprasAppService.ItensPeloCarrinhoId(idCarrinho.Value);
+
             _itensCarrinhoAppService.RemoverItens(idCarrinho.Value);
 
             return RedirectToAction("FinalizarCompra","CarrinhoCompras", new{id = idCarrinho.Value });
